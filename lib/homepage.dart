@@ -46,8 +46,11 @@ class _HomePageState extends State<HomePage> {
               Text("Shop Me", style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold,color: _blackcolor ),),
               Text("Trending Products", style: TextStyle(fontSize: 20,color: _blackcolor ),),
              
-              const Padding(padding: EdgeInsets.symmetric(vertical: 9,horizontal: 4),
+             Padding(padding:   EdgeInsets.symmetric(vertical: 9,horizontal: 4),
               child: CupertinoSearchTextField()),
+
+
+
               Expanded(
                 child: ListView.builder( shrinkWrap:true,
                   itemBuilder: (context,index){
@@ -64,6 +67,8 @@ class _HomePageState extends State<HomePage> {
       )
     );
   }
+
+
 }
 
 class ProductList extends StatelessWidget {
