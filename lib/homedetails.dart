@@ -32,7 +32,8 @@ class _HomeDetailsPageState extends State<HomeDetailsPage> {
             child: Center(
               child: Column(
                 children: [
-                  Image.network(widget.productItem.image),
+                  Hero(tag: Key(widget.productItem.id.toString()),
+                      child: Image.network(widget.productItem.image)),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 5,horizontal: 10),
                     child: Card(

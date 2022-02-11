@@ -45,6 +45,9 @@ class _HomePageState extends State<HomePage> {
             children: [
               Text("Shop Me", style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold,color: _blackcolor ),),
               Text("Trending Products", style: TextStyle(fontSize: 20,color: _blackcolor ),),
+             
+              const Padding(padding: EdgeInsets.symmetric(vertical: 9,horizontal: 4),
+              child: CupertinoSearchTextField()),
               Expanded(
                 child: ListView.builder( shrinkWrap:true,
                   itemBuilder: (context,index){
@@ -83,15 +86,19 @@ class ProductList extends StatelessWidget {
                 width: MediaQuery.of(context).size.width*0.30,
                 color:_mycolor,
                 padding: EdgeInsets.all(8),
-                child: Image.network(productItem.image)),
+                child: Hero(tag: Key(productItem.id.toString()),
+                child: Image.network(productItem.image))),
+            SizedBox(width: 5,),
             Expanded(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    SizedBox(height: 2,),
                     Text(productItem.name,style: TextStyle(fontWeight: FontWeight.bold,color:_blackcolor ),),
                     Text(productItem.desc,style: TextStyle(color: Colors.black45),),
 
+                    SizedBox(height: 5,),
                     ButtonBar(
                     alignment: MainAxisAlignment.spaceBetween,
                     buttonPadding: EdgeInsets.only(top: 4),
